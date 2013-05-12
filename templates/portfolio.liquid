@@ -1,0 +1,11 @@
+{% block content %}
+	<h1>Portfolio</h1>
+	<!-- Display a group for portfolio by category -->
+	{% grouped 'portfolio' by 'category' %}
+			<div class="cat">{% include "portfolio/category" with grouped.items %}</div>
+	{% endgrouped %}
+	<!-- Display a list of portfolio items, but allow queries by route category (see mixture.json for routes) order desc -->
+	{% collection "portfolio" query 'category={{ mixture.route.category }}' order desc %}
+		<ul class="portfolio-items">{% include "portfolio/small" with collection.items %}</ul>
+	{% endcollection %}
+{% endblock %}

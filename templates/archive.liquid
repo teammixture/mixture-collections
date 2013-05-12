@@ -1,0 +1,14 @@
+{% block content %}
+	<h1>Archive</h1>
+	<!-- Archive tag simple pulls from a collection and groups by year with all child elements (in this case blog) -->
+	{% archive "blog" %}
+		{% for item in archive.items %}
+			<h3>{{ item.year }}</h3>
+			<ul class="archive">
+			{% for post in item.children %}
+				<li><a href="{{ post.slug }}">{{ post.title }}</a></li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+	{% endarchive %}
+{% endblock %}

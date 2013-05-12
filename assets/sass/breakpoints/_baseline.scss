@@ -1,0 +1,189 @@
+/*
+ * Baseline
+ */
+ html{
+	font-family:$default-face;
+	font-size:100%;
+	font-weight:normal;
+	line-height:$line-height-ratio;
+	color:$default-font-color;
+	background-color:$bgrnd-color;
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:none;
+}
+
+html,body{
+	height:100%;
+}
+
+.wrapper{
+	max-width:1000px;
+	min-height:100%;
+	padding:2em 1em;
+	position:relative;
+	margin:0 auto;
+}
+
+canvas{
+	-ms-touch-action: double-tap-zoom;
+}
+
+a{
+	color:#666;
+	text-decoration:underline;
+
+	&:hover{
+		text-decoration:none;
+	}
+}
+
+.selected{
+	text-decoration: none;
+	color:#999;
+}
+
+
+
+
+/*
+ * Paging
+ */
+.paging{
+	list-style: none;
+	border-top:1px solid #ccc;
+	margin-top:2em;
+	@extend .cf;
+	padding-top:.5em;
+
+	em{
+		margin:0 .5em;
+	}
+}
+
+.paging li{
+	display:inline-block;
+}
+
+.paging li.next{
+	float:right;
+}
+
+.paging li.previous{
+	float:left;
+}
+
+
+
+/*
+ * Header
+ */
+.page-head{
+	text-align: center;
+	padding-bottom:1em;
+	border-bottom:1px solid #ccc;
+}
+
+.page-head .ident{
+	font-family:$brand-face;
+	@include font-size(40px);
+	font-weight:700;
+	color:$default-font-color;
+	display:inline-block;
+	margin-bottom:.5em;
+	text-decoration:none;
+}
+
+.page-head nav a{
+	font-family:$brand-face;
+	display:inline-block;
+	margin:0 .5em;
+	@include font-size(15px);
+	font-weight:700;
+}
+
+
+
+/*
+ * Content
+ */
+.content{
+	text-align:center;
+	padding:2.5em 0;
+	max-width:650px;
+	margin: 0 auto;
+}
+
+p{
+	margin-top:1em;
+	@include font-size(18px);
+
+	em{
+		border-bottom:1px solid #ccc;
+		display:inline-block;
+	}
+}
+
+h3{
+	margin-top:1em;
+}
+
+
+
+/*
+ * Portfolio
+ */
+.portfolio-items{
+	list-style:none;
+	@extend .cf;
+
+	li{
+		float:left;
+		margin:.5em 0 0 .5em;
+	}
+}
+
+.cat{
+	margin:1em 0 1.5em 0;
+}
+
+.category{
+	display:inline-block;
+	margin:0 .5em;
+}
+
+
+
+/*
+ * Blog
+ */
+.blog-items{
+	list-style:none
+}
+
+.blog-items li{
+	margin-bottom:3em;
+}
+
+.archive{
+	list-style:none;
+}
+
+.details{
+	margin-top:1em;
+	color:#999;
+}
+
+.date{
+	display:inline-block;
+	margin:0 .5em;
+}
+
+.notes{
+	border:1px dashed #ccc;
+	margin-top:2em;
+	padding:0 1em 1em 1em;
+
+	p{
+		@include font-size(15px);
+	}
+}

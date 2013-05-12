@@ -1,0 +1,29 @@
+{
+    "debug": false,
+    "lintScripts": false,
+    "preprocessorLocations": "assets",
+    "preprocessorScriptOutput": "assets/js",
+    "preprocessorStyleOutput": "assets/css",
+    "projectName": "Collections",
+    "projectDescription": "A simple example project demonstrating Collections within Mixture",
+    "publishedId": null,
+    "serverHostname": null,
+    "serverPort": null,
+    "templateDirectory": "templates",
+    "templateDefaultLayout": "layout",
+    "templateDefaultPage": "index",
+    "type": "mixture",
+    "useCompass": false,
+    "simpleModePartnerServer": null,
+    "modelSource": null,
+    "domain": null,
+    "convertHtmlOutput": null,
+    "followLeader": true,
+    "routes": [
+        { "route": "blog/page-:page", "template": "blog", "redirect": null },
+        { "route": "blog/date/:month/:year", "template": "blog", "redirect": null },
+        { "route": "portfolio/category/:category", "template": "portfolio", "redirect": null }
+    ],
+    "customRubyPath": null,
+    "customGemPath": null
+}

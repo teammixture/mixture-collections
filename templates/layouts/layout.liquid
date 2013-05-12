@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Collections{% endblock %}</title>
+        <link rel="shortcut icon" type="image/ico" href="{{ "favicon.ico" | asset_url }}" />
+        {{ "app.css" | asset_url | stylesheet_tag }}
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+            {% include "header" %}
+            <div class="content">
+            {% block content %}<!-- Content block -->{% endblock %}
+            <!-- The item tag can be ordered and queried, but will only appear when on a collection item and is based upon that items collection, it's a simple way to show next and previous items -->
+            {% item order desc %}
+                {% if next or previous %}
+                    <ul class="paging">
+                        {% if next %}
+                            <li class="next"><a href="{{ next.url }}" class="newer">{{ next.title }}</a> &rarr;</li>
+                        {% endif %}
+                        {% if previous %}
+                            <li class="previous">&larr; <a href="{{ previous.url }}" class="older">{{ previous.title }}</a></li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            {% enditem %}
+            </div>
+        </div>
+    </body>
+</html>

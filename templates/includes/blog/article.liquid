@@ -1,0 +1,6 @@
+<li>
+	{{ article.body }}
+	<div class="details">
+		Categories: {{ article.tags | join:', ' }} &mdash; Posted: {{ article.date | date:'%d %b %Y'}}
+	</div>
+</li>

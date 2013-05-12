@@ -1,0 +1,9 @@
+<header class="page-head">
+	<a href="/" class="ident">Collections</a>
+	<nav>
+		<a href="/" {% if mixture.url == "index" %}class="selected"{% endif %}>Home</a>
+		<a href="/portfolio" {% if mixture.url contains "portfolio" or mixture.url == "portfolio" %}class="selected"{% endif %}>Portfolio</a>
+		<a href="/blog" {% if mixture.url contains "blog" or mixture.url == "blog" %}class="selected"{% endif %}>Blog</a>
+		<a href="/archive" {% if mixture.url == "archive" %}class="selected"{% endif %}>Archive</a>
+	</nav>
+</header>

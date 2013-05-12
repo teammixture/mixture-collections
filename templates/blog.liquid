@@ -1,0 +1,21 @@
+{% block content %}
+	<!-- Display a list of blog items paged (2 per page), but allow queries by route month and year (see mixture.json for routes) order desc -->
+	{% collection "blog" by 2 query 'month={{ mixture.route.month }}&year={{ mixture.route.year }}' order desc %}
+		<ul class="blog-items">{% include "blog/article" with collection.items %}</ul>
+		<!-- Example paging based on the collection data -->
+		<div class="paging">
+			{% if collection.previous %}
+				<a href="/blog/page-{{ collection.current_page | minus:1 }}">Previous</a>
+			{% endif %}
+			<em>Showing items {{ collection.current_offset | plus: 1 }}-{% if collection.next %}{{ collection.current_offset | plus: collection.page_size }}{% else %}{{ collection.size }}{% endif %} of {{ collection.size }}</em>
+			{% if collection.next %}
+				<a href="/blog/page-{{ collection.current_page | plus:1 }}">Next</a>
+			{% endif %}
+		</div>
+	{% endcollection %}
+	<!-- Display a group for blog items by date (which will group by month and year) -->
+	{% grouped 'blog' by 'date' %}
+		<h3>Archives</h3>
+		{% include "blog/date" with grouped.items %}
+	{% endgrouped %}
+{% endblock %}

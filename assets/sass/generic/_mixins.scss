@@ -1,0 +1,23 @@
+/* 
+ * Mixins // Credit to Harry Roberts & inuit.css for these simple Mixins
+ *
+ * Font size
+ */
+@mixin font-size($font-size){
+    font-size: $font-size;
+    font-size: ($font-size / $base-font-size)*1rem;
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+}
+
+
+
+/*
+ * Vendor
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
