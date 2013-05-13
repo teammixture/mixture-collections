@@ -24,6 +24,5 @@
         { "route": "blog/date/:month/:year", "template": "blog", "redirect": null },
         { "route": "portfolio/category/:category", "template": "portfolio", "redirect": null }
     ],
-    "customRubyPath": null,
-    "customGemPath": null
+    "customRubyPath": null
 }
