@@ -1,4 +1,5 @@
 ---
+layout: alt
 title: Example post
 tags: [example,news]
 published: true
